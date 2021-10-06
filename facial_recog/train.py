@@ -1,4 +1,4 @@
-from keras.optimizers import RMSprop
+from tensorflow.keras.optimizers import RMSprop
 from keras.preprocessing.image import ImageDataGenerator
 import cv2
 from keras.models import Sequential
@@ -25,7 +25,7 @@ model =Sequential([
 ])
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['acc'])
 
-TRAINING_DIR = "C:\Users\sanzu\Downloads\face-mask-detector-project\face-mask-dataset\Dataset\train\train"
+TRAINING_DIR = r"/home/wlittle3/Downloads/face-mask-dataset/Dataset/train"
 train_datagen = ImageDataGenerator(rescale=1.0/255,
                                    rotation_range=40,
                                    width_shift_range=0.2,
@@ -38,7 +38,7 @@ train_datagen = ImageDataGenerator(rescale=1.0/255,
 train_generator = train_datagen.flow_from_directory(TRAINING_DIR,
                                                     batch_size=10,
                                                     target_size=(150, 150))
-VALIDATION_DIR = "C:\Users\sanzu\Downloads\face-mask-detector-project\face-mask-dataset\Dataset\test\test"
+VALIDATION_DIR = r"/home/wlittle3/Downloads/face-mask-dataset/Dataset/test"
 validation_datagen = ImageDataGenerator(rescale=1.0/255)
 
 validation_generator = validation_datagen.flow_from_directory(VALIDATION_DIR,
