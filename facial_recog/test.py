@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from keras.models import load_model
-model=load_model("./model2-008.model")
+model=load_model('/home/pi/Senior_Design_Rona_Cop/facial_recog/model2-010.model/saved_model.pb')
 
 labels_dict={0:'without mask',1:'mask'}
 color_dict={0:(0,0,255),1:(0,255,0)}
@@ -10,7 +10,7 @@ size = 4
 webcam = cv2.VideoCapture(0) #Use camera 0
 
 # We load the xml file
-classifier = cv2.CascadeClassifier('/home/wlittle3/Senior_Design_Rona_Cop/facial_recog/haarcascade_frontalface_default.xml')
+classifier = cv2.CascadeClassifier('/home/pi/Senior_Design_Rona_Cop/facial_recog/haarcascade_frontalface_default.xml')
 
 while True:
     (rval, im) = webcam.read()
