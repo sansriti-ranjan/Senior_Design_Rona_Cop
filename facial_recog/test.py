@@ -9,6 +9,11 @@ color_dict={0:(0,0,255),1:(0,255,0)}
 size = 4
 webcam = cv2.VideoCapture(0) #Use camera 0
 
+cap = cv2.VideoCapture(0)
+width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+print(width, height)
+
 # We load the xml file
 classifier = cv2.CascadeClassifier('/home/wlittle3/Senior_Design_Rona_Cop/facial_recog/haarcascade_frontalface_default.xml')
 
