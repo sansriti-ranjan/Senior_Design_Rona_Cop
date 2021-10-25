@@ -71,6 +71,7 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 		faces = np.array(faces, dtype="float32")
 		preds = maskNet.predict(faces, batch_size=32)
 
+
 	# return a 2-tuple of the face locations and their corresponding
 	# locations
 	return (locs, preds)
@@ -121,11 +122,19 @@ while True:
 		(startX, startY, endX, endY) = box
 		(mask, withoutMask) = pred
 
+		#use the prediction here
+		if mask > withoutMask
+			signal = 1
+		else
+			signal = 0
+
+		#pass the signal to the appropriate functions
+		
 		# determine the class label and color we'll use to draw
 		# the bounding box and text
 		label = "Mask" if mask > withoutMask else "No Mask"
 		color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
-			
+
 		# include the probability in the label
 		label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
 

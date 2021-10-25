@@ -82,6 +82,14 @@ def mask_image():
 			# has a mask or not
 			(mask, withoutMask) = model.predict(face)[0]
 
+			#use the prediction here
+			if mask > withoutMask
+				signal = 1
+			else
+				signal = 0
+
+			#pass the signal to the appropriate functions
+
 			# determine the class label and color we'll use to draw
 			# the bounding box and text
 			label = "Mask" if mask > withoutMask else "No Mask"
@@ -99,6 +107,6 @@ def mask_image():
 	# show the output image
 	cv2.imshow("Output", image)
 	cv2.waitKey(0)
-	
+
 if __name__ == "__main__":
 	mask_image()
